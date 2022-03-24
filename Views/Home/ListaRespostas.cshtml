@@ -1,0 +1,41 @@
+@model IEnumerable<InvitacionsFesta.Models.InvitacionResposta>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Respostas a invitacion cumple</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+
+<body>
+    <div>
+        <h2 class="text-center">Aqui esta a lista de xente que ira a festa.</h2>
+        <table class="table table-bordered table-striped table-sm">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Telefono</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (InvitacionsFesta.Models.InvitacionResposta resposta in Model!)
+                {
+                    <tr>
+                        <td>@resposta.Nome</td>
+                        <td>@resposta.Email</td>
+                        <td>@resposta.Telefono</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

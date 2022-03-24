@@ -1,0 +1,31 @@
+@model InvitacionsFesta.Models.InvitacionResposta
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Gracias por responder</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+
+<body class="text-center">
+    <div>
+        <h1>Moitas gracias, @Model?.Nome</h1>
+        @if (Model?.VaiAsistir == true)
+        {
+            @:E xenial saber que ves. As bebidas xa están na neveira. E hai piñata por se te queres desafogar a paus.
+        }
+        else
+        {
+            @:Unha pena que non poidas vir. Temos un xamon na casa...que está.... E viandas varias. Gracias por dicirnos.
+        }
+    </div>
+    Fai click <a asp-action="ListaRespostas">aqui</a> para saber quen ben.
+</body>
+
+</html>

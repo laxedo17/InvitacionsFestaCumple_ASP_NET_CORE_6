@@ -1,0 +1,46 @@
+@model InvitacionsFesta.Models.InvitacionResposta
+@* a expresion @model especifica que a vista espera recibir un obxeto InvitacionResposta como view model *@
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Formulario de invitacion</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+</head>
+
+<body>
+    <h5 class="bg-primary text-white text-center m-2 p-2">Invitacion</h5>
+    <form asp-action="RsvpFormulario" method="post" class="m-2">
+        <div asp-validation-summary="All"></div>
+        <div class="form-group">
+            <label asp-for="Nome" class="form-label">O teu nome:</label>
+            <input asp-for="Nome" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Email" class="form-label">Indica o teu email:</label>
+            <input asp-for="Email" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Telefono" class="form-label">O teu telefono:</label>
+            <input asp-for="Telefono" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="VaiAsistir" class="form-label">Asistiras ao convite?</label>
+            <select asp-for="VaiAsistir" class="form-control">
+                <option value="">Elixe unha opcion</option>
+                <option value="true">Si, ali estarei</option>
+                <option value="false">Non, non podo ir</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Enviar resposta invitacion.</button>
+    </form>
+</body>
+
+</html>
